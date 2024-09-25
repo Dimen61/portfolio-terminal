@@ -8,9 +8,11 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
 }
 
 #terminal {
+    display: none;
     width: 80%;
     max-width: 800px;
     height: 60%;
@@ -46,4 +48,8 @@ body {
 
 #command-input::placeholder {
     color: grey;
+}
+
+canvas {
+    display: block;
 }
