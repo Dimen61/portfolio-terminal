@@ -1,0 +1,57 @@
+{
+  "type": "dir",
+  "contents": {
+    "education": {
+      "type": "dir",
+      "contents": {
+        "Sun_Yat-sen_University_2010-2014": {
+          "type": "dir",
+          "contents": {
+            "college_teacher_information_management_system.md": {
+              "type": "file",
+              "content": "# College teacher information management system\n\n## Project introduction\nThis is a typical MIS(management information system) project which enables to manage the information of our college teachers and conduct annual assessments.\n\nThis is my first web project. I wrote all code, UI design by myself. I learned all necessary tools and frameworks such as python, google app engine and bootstrap by myself.\n\n## Tech\nI implemented this project in web so that anyone can access it easily. I used **google app engine** as the backend framework with **Python** language. For frontend, I wrote **html** with **bootstrap** UI framework. \n"
+            },
+            "readme.md": {
+              "type": "file",
+              "content": "# Sun Yat-sen University_2010-2014\n\n\n"
+            }
+          }
+        },
+        "Zhejiang_University_2015-2018": {
+          "type": "dir",
+          "contents": {
+            "hexahedral_mesh_data_structure_based_on_redis.md": {
+              "type": "file",
+              "content": "# Hexahedral mesh data structure based on redis\n\n## Project introduction\nHexahedral mesh applys in simulation and CG. \nThe mesh data is stored in memory when the program is running, but the non-robustness of the mesh editing algorithm can easily cause the program to crash during the mesh editing process, resulting in the loss of previously edited information. By using a database, when our program crashes, the mesh data is still retained in the database, and it can also protect the mesh from misoperation. Due to the independence of the database, multiple mesh editing programs can modify the mesh data at the same time.\n\n## Tech\nI used **python** and **redis** database to design a hexahedral mesh data structure and related methods to support the basic mesh query and modification operations.\n\n"
+            },
+            "hexahedral_mesh_sheet_inflation.md": {
+              "type": "file",
+              "content": "# Hexahedral mesh sheet inflation\n\n## Project introduction\nHexahedral mesh applys in simulation and CG.\n\nHexahedral mesh sheet inflation is a topology modification operation for hexahedral meshes that can be used to improve the quality of hexahedral meshes.\nMy responsibilities: Improved the existing sheet inflation to improve its robustness and enhance its functionality. Solved the problem of geometric attribution after topology modification. Expanded the definition of shrink set to handle situations that could not be handled before"
+            },
+            "readme.md": {
+              "type": "file",
+              "content": ""
+            }
+          }
+        }
+      }
+    },
+    "side_project": {
+      "type": "dir",
+      "contents": {
+        "face_hero.md": {
+          "type": "file",
+          "content": ""
+        }
+      }
+    },
+    "skills": {
+      "type": "dir",
+      "contents": {}
+    },
+    "work": {
+      "type": "dir",
+      "contents": {}
+    }
+  }
+}

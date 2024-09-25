@@ -1,0 +1,49 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#terminal {
+    width: 80%;
+    max-width: 800px;
+    height: 60%;
+    background-color: black;
+    border: 2px solid #00ff00;
+    padding: 10px;
+    overflow-y: auto;
+    box-shadow: 0 0 10px #00ff00;
+}
+
+#output {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+#input-line {
+    display: flex;
+}
+
+.prompt {
+    color: #00ff00;
+    white-space: nowrap;
+}
+
+#command-input {
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1em;
+}
+
+#command-input::placeholder {
+    color: grey;
+}
