@@ -56,7 +56,8 @@ function loop() {
   const timeElapsed = Date.now() - startTime;
   if (timeElapsed < 3000) {
     draw();
-    requestAnimationFrame(loop);
+    setTimeout(loop, 20);
+    // requestAnimationFrame(loop);
   } else {
     canvas.style.display = 'none';
     const terminal = document.querySelector('#terminal');
