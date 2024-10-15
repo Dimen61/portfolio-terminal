@@ -6,7 +6,13 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 // Matrix characters (can use any character set you prefer)
-const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@#$%^&*()*&^%+-/~{[|`]}';
+const characters = `
+When I was young and free and my imagination had no limits,I dreamed of changing the world.
+As I grew older and wiser, I discovered the world would not change, so I shortend my sights somewhat and decided to change only my country.But it, too, seemed immovable.
+As I grew into my twilight years, in one last desperate attempt, I settled for changing only my family, those closest to me, but alas, they would have none of it.
+And now, as I lie on my death bed,I suddenly realize:
+If I had only change myself first,then by example I would have changed my family. From their inspiration and encouragement,I would then have been able to better my country,and who knows,I may have even changed the world.
+`;
 const matrixChars = characters.split('');
 
 // Font size
@@ -28,7 +34,7 @@ function draw() {
 
   // Loop over each column and draw the characters
   drops.forEach((y, i) => {
-    const text = matrixChars[Math.floor(Math.random() * matrixChars.length)];
+    const text = matrixChars[Math.floor(Math.random() * matrixChars.length)].toUpperCase();
 
     // Draw the character at (x, y)
     const x = i * fontSize;
@@ -48,9 +54,10 @@ function draw() {
 let startTime = Date.now();
 function loop() {
   const timeElapsed = Date.now() - startTime;
-  if (timeElapsed < 2000) {
+  if (timeElapsed < 3000) {
     draw();
-    requestAnimationFrame(loop);
+    setTimeout(loop, 20);
+    // requestAnimationFrame(loop);
   } else {
     canvas.style.display = 'none';
     const terminal = document.querySelector('#terminal');
@@ -58,7 +65,6 @@ function loop() {
   }
 }
 loop();
-
 
 
 
