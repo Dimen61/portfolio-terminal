@@ -1,12 +1,16 @@
 document.addEventListener('MatrixRainLoaded', () => {
     const terimial = document.querySelector('#terminal');
     const commandInput = document.querySelector("#command-input");
-    const inputRect = commandInput.getBoundingClientRect();
 
     resetCaret();
 
     commandInput.addEventListener("input", () => {
-        caret.style.left = `${-inputRect.width + Number(getTextWidthInPixel())}px`;
+        const inputRect = commandInput.getBoundingClientRect();
+        caret.style.left = `${-inputRect.width + Number(getCommandInputTextWidthInPixel())}px`;
+
+        console.log(`-inputRect.width: ${-inputRect.width}`);
+        console.log(`getCommandInputTextWidthInPixel: ${getCommandInputTextWidthInPixel()}`);
+        console.log(`caret.style.left: ${caret.style.left}`);
         console.log('Move the caret');
     });
 
@@ -24,7 +28,7 @@ function resetCaret() {
     commandInput.focus();
 }
 
-function getTextWidthInPixel() {
+function getCommandInputTextWidthInPixel() {
     const input = document.querySelector('#command-input');
     const text = input.value;
 
