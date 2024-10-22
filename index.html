@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terminal of dimen61's portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <canvas id="matrix-rain">
@@ -15,13 +16,13 @@
         <div id="output"></div>
         <div id="input-line">
             <div class="prompt" data-path="/">dimen61@portfolio:/$</div>
-            <input type="text" id="command-input" autofocus>
+            <input type="text" id="command-input" autocomplete="off" autofocus>
             <div id="caret"></div>
         </div>
     </div>
 
-    <script src="matrixRain.js"></script>
-    <script src="main.js"></script>
-    <script src="commandHandler.js"></script>
+    <script src="js/matrixRain.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/commandHandler.js"></script>
 </body>
 </html>
