@@ -46,6 +46,9 @@ body {
     outline: none;
     width: 100%;
     caret-color: transparent;
+    font-size: 16px;
+    font-family: monospace;
+    margin-left: 7px;
 }
 
 #command-input::placeholder {
