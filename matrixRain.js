@@ -54,7 +54,8 @@ function draw() {
 let startTime = Date.now();
 function loop() {
   const timeElapsed = Date.now() - startTime;
-  if (timeElapsed < 3000) {
+
+  if (timeElapsed < 2500) {
     draw();
     setTimeout(loop, 20);
     // requestAnimationFrame(loop);
@@ -62,9 +63,14 @@ function loop() {
     canvas.style.display = 'none';
     const terminal = document.querySelector('#terminal');
     terminal.style.display = 'block';
+
+    document.dispatchEvent(new Event('MatrixRainLoaded'));
   }
 }
+
 loop();
+
+console.log('Matrix rain!!!');
 
 
 

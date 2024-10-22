@@ -38,12 +38,15 @@ commandInput.addEventListener("keypress", function (e) {
 
     // Execute simple commands (for demo purposes)
     handleCommand(command);
+    resetCaret();
 
     // Scroll to the bottom
     document.getElementById("terminal").scrollTop =
       document.getElementById("terminal").scrollHeight;
   }
 });
+
+console.log('Command handler loaded...');
 
 function handleCommand(command) {
   let response = "";
