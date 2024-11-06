@@ -4,14 +4,15 @@ document.addEventListener('MatrixRainLoaded', () => {
 
     resetCaret();
 
-    commandInput.addEventListener("input", () => {
+    commandInput.addEventListener("keyup", () => {
         const inputRect = commandInput.getBoundingClientRect();
-        caret.style.left = `${-inputRect.width + Number(getCommandInputTextWidthInPixel())}px`;
+        caret.style.left = `${-inputRect.width + getCaretPostionInPixel()}px`;
 
         console.log(`-inputRect.width: ${-inputRect.width}`);
-        console.log(`getCommandInputTextWidthInPixel: ${getCommandInputTextWidthInPixel()}`);
+        console.log(`getCaretPostionInPixel: ${getCaretPostionInPixel()}`);
         console.log(`caret.style.left: ${caret.style.left}`);
-        console.log('Move the caret');
+        console.log(`caretPosition: ${commandInput.selectionStart}`);
+        console.log('-------------------');
     });
 
     terimial.addEventListener("click", () => {
@@ -44,6 +45,16 @@ function getCommandInputTextWidthInPixel() {
     // Measure the width of the text
     const textWidth = context.measureText(text).width;
     return `${textWidth}`;
+}
+
+function getCaretPostionInPixel() {
+    const commandInput = document.querySelector("#command-input");
+    const caretPosition = commandInput.selectionStart;
+    const totalWidth = Number(getCommandInputTextWidthInPixel());
+    const charNumInput = commandInput.value.length;
+    const charWidth = (charNumInput > 0) ? (totalWidth / charNumInput) : 0;
+
+    return caretPosition * charWidth;
 }
 
 console.log('Main css is ready...');
