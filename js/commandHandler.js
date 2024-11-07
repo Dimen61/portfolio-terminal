@@ -20,10 +20,12 @@ fetch("assets/fileSystem.json")
 let currentDir = "/";
 
 //////////////////////////////////////////////////////////////////////////////
-// Deal with input
+// Command input event handlers
 //////////////////////////////////////////////////////////////////////////////
 const commandInput = document.getElementById("command-input");
 const outputMsg = document.getElementById("output");
+
+// This event listener handles the "Enter" key press on the command input
 commandInput.addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
     console.log(commandInput.value);
@@ -43,13 +45,39 @@ commandInput.addEventListener("keypress", function (e) {
     // Scroll to the bottom
     document.getElementById("terminal").scrollTop =
       document.getElementById("terminal").scrollHeight;
+  } 
+});
+
+// This event listener handles the "Tab" key press on the command input
+commandInput.addEventListener("keydown", (e) => {
+  if (e.key === "Tab") {
+    e.preventDefault();
+
+    console.log(`Command input: ${commandInput.value}`);
+
+    const candidates = tabCompletion(commandInput.value);
+    if (candidates.length > 0) {
+      const inputArray = commandInput.value.split(" ");
+      const candidate = candidates[0];
+
+      if (inputArray.length > 1) {
+        const newInput = inputArray.slice(0, -1).join(" ") + " " + candidate;
+        commandInput.value = newInput;
+      } else if (inputArray.length === 1) {
+        commandInput.value = candidate + " ";
+      }
+      console.log(`Suggested command: ${candidates[0]}`);
+    }
   }
 });
 
 console.log('Command handler loaded...');
 
+function getSupportedCommands() {
+  return ["help", "ls", "pwd", "clear", "cd", "cat"];  
+}
+
 function handleCommand(command) {
-  let response = "";
   const args = command.split(" ");
   const cmd = args[0].toLowerCase();
 
@@ -57,9 +85,8 @@ function handleCommand(command) {
     case "":
       break;
     case "help":
-      response = "Available commands: help, ls, pwd, clear";
       outputMsg.innerHTML += newline(
-        "Available commands: help, ls, clear, cd ant cat"
+        `Available commands: ${getSupportedCommands().join(", ")}`
       );
       break;
 
@@ -128,6 +155,26 @@ function handleCommand(command) {
 
 function newline(content) {
   return `<div>${content}</div>`;
+}
+
+function tabCompletion(inputText) {
+  // Match commands
+  let candidates = getCompletionCandidates(inputText, getSupportedCommands());
+
+  // Match file or directory names under current directory
+  const currentDirObj = getFileSystemObj(currentDir);
+  if (currentDirObj && currentDirObj.type === "dir") {
+    const fileName = inputText.split(" ").pop();
+    const fileNames = Object.keys(currentDirObj.contents);
+    candidates = candidates.concat(getCompletionCandidates(fileName, fileNames));
+  }
+
+  return candidates;
+}
+
+function getCompletionCandidates(inputText, allCandidates) {
+  let candidates = allCandidates.filter((candidate) => candidate.startsWith(inputText));
+  return candidates;
 }
 
 /**
