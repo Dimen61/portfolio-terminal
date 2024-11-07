@@ -4,15 +4,10 @@ document.addEventListener('MatrixRainLoaded', () => {
 
     resetCaret();
 
+    // Set caret position
     commandInput.addEventListener("keyup", () => {
         const inputRect = commandInput.getBoundingClientRect();
         caret.style.left = `${-inputRect.width + getCaretPostionInPixel()}px`;
-
-        console.log(`-inputRect.width: ${-inputRect.width}`);
-        console.log(`getCaretPostionInPixel: ${getCaretPostionInPixel()}`);
-        console.log(`caret.style.left: ${caret.style.left}`);
-        console.log(`caretPosition: ${commandInput.selectionStart}`);
-        console.log('-------------------');
     });
 
     window.addEventListener("resize", () => {
@@ -20,6 +15,7 @@ document.addEventListener('MatrixRainLoaded', () => {
         caret.style.left = `${-inputRect.width + getCaretPostionInPixel()}px`;
     });
 
+    // Focus the command input
     terimial.addEventListener("click", () => {
         commandInput.focus();
     });
