@@ -63,6 +63,7 @@ canvas {
     position: relative;
     width: 0.8em;
     height: 1em;
+    flex-shrink: 0;
     background-color: #00ff00;
     animation: blink 1s step-start infinite;
 }
