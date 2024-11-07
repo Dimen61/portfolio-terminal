@@ -15,6 +15,11 @@ document.addEventListener('MatrixRainLoaded', () => {
         console.log('-------------------');
     });
 
+    window.addEventListener("resize", () => {
+        const inputRect = commandInput.getBoundingClientRect();
+        caret.style.left = `${-inputRect.width + getCaretPostionInPixel()}px`;
+    });
+
     terimial.addEventListener("click", () => {
         commandInput.focus();
     });
