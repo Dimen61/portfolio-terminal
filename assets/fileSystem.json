@@ -4,54 +4,40 @@
     "education": {
       "type": "dir",
       "contents": {
-        "Sun_Yat-sen_University_2010-2014": {
-          "type": "dir",
-          "contents": {
-            "college_teacher_information_management_system.md": {
-              "type": "file",
-              "content": "# College teacher information management system\n\n## Project introduction\nThis is a typical MIS(management information system) project which enables to manage the information of our college teachers and conduct annual assessments.\n\nThis is my first web project. I wrote all code, UI design by myself. I learned all necessary tools and frameworks such as python, google app engine and bootstrap by myself.\n\n## Tech\nI implemented this project in web so that anyone can access it easily. I used **google app engine** as the backend framework with **Python** language. For frontend, I wrote **html** with **bootstrap** UI framework. \n"
-            },
-            "readme.md": {
-              "type": "file",
-              "content": "# Sun Yat-sen University_2010-2014\n\n\n"
-            }
-          }
-        },
-        "Zhejiang_University_2015-2018": {
-          "type": "dir",
-          "contents": {
-            "hexahedral_mesh_data_structure_based_on_redis.md": {
-              "type": "file",
-              "content": "# Hexahedral mesh data structure based on redis\n\n## Project introduction\nHexahedral mesh applys in simulation and CG. \nThe mesh data is stored in memory when the program is running, but the non-robustness of the mesh editing algorithm can easily cause the program to crash during the mesh editing process, resulting in the loss of previously edited information. By using a database, when our program crashes, the mesh data is still retained in the database, and it can also protect the mesh from misoperation. Due to the independence of the database, multiple mesh editing programs can modify the mesh data at the same time.\n\n## Tech\nI used **python** and **redis** database to design a hexahedral mesh data structure and related methods to support the basic mesh query and modification operations.\n\n"
-            },
-            "hexahedral_mesh_sheet_inflation.md": {
-              "type": "file",
-              "content": "# Hexahedral mesh sheet inflation\n\n## Project introduction\nHexahedral mesh applys in simulation and CG.\n\nHexahedral mesh sheet inflation is a topology modification operation for hexahedral meshes that can be used to improve the quality of hexahedral meshes.\nMy responsibilities: Improved the existing sheet inflation to improve its robustness and enhance its functionality. Solved the problem of geometric attribution after topology modification. Expanded the definition of shrink set to handle situations that could not be handled before"
-            },
-            "readme.md": {
-              "type": "file",
-              "content": ""
-            }
-          }
-        }
-      }
-    },
-    "side_project": {
-      "type": "dir",
-      "contents": {
-        "face_hero.md": {
+        "Sun_Yat-sen_University_2010-2014.md": {
           "type": "file",
-          "content": ""
+          "content": "# Sun Yat-sen University (2010 ~ 2014)\n\nI was directly admitted to Sun Yat-sen University due to my achievements in high school competitive programming, which had sparked a deep love for coding. However, during college, my passion for programming was overshadowed by personal loss; I lost my grandparents, who raised me, one after the other. These experiences left me with profound sadness and a desire to understand life’s deeper meaning.\n\nIn those years, I immersed myself in learning far beyond my computer science major. I read extensively—hundreds of books across disciplines including economics, physics, philosophy, and management. I market some of books in [here](https://www.douban.com/people/waterfiredm/). I took classes on subjects from philosophy to advanced mathematics and even a course on cultivating plants. Despite my dedication, spending countless hours in the library, I still felt an unshakable emptiness.\n\nA transformative experience came when I traveled to Tibet. The altitude sickness was challenging at first, but as I recovered, I witnessed something extraordinary: a halo of light surrounding the sun. Later, in Tibet’s most renowned temple, I heard a voice—whether in my mind or resonating from the temple itself, I’m not sure. In that moment, I felt a deep sense of peace and fulfillment that stayed with me. Then I came back to coding world."
+        },
+        "Zhejiang_University_2015-2018.md": {
+          "type": "file",
+          "content": "# Zhejiang University (2015 ~ 2018)\n\n"
         }
       }
     },
-    "skills": {
+    "project": {
       "type": "dir",
       "contents": {}
+    },
+    "readme.md": {
+      "type": "file",
+      "content": "# About Me\n\nHi, and welcome!\n\nI’m dimen61, a software engineer from China with a passion for innovation, problem-solving and coding. My journey in programming began in high school through competitive programming, which sparked my interest in abstract thinking and using code to solve complex challenges. This enthusiasm led me to pursue a bachelor’s degree in Management Information Systems and a master’s in Computer Science. \n\nSince then, I’ve been fortunate to work on impactful projects at companies like Xiaomi and Microsoft. At Xiaomi, I developed platforms and machine learning models to predict user click rates for ads, blending backend development with data science. Later, at Microsoft, I focused on backend features to improve shopping experiences on the Bing search platform.\n\nFor me, programming is far more than a career — it’s a craft and a constant source of inspiration. The process of blending logic with creativity, seeing ideas come to life, and achieving that “flow” state is what keeps me motivated. Even after taking a two-year break to explore new areas, my passion for coding has only deepened.\n\nThis site is my personal project, designed to reflect my love for technology in an interactive way. Built like a terminal, you can navigate using Linux-style commands to uncover my story and explore more about my journey. I hope you enjoy discovering it as much as I enjoyed creating it!\n\nPlease use `help` command to get all support commands.\n\n## Connection\n\n- Email: dimen61@gmail.com\n- Blog: https://dimen61.github.io\n- X: @dimen61\n"
+    },
+    "skills.md": {
+      "type": "file",
+      "content": "# Skills\n\n## Overview\n\nMy technical expertise spans backend development and data science, primarily focusing on building projects showcased in the **project** folder.\n\n## Python\n\nWith over a decade of experience in Python, I can quickly understand and contribute to any Python-based project. My skills include:\n\n- **Backend Development**: Building robust web applications using Django.\n- **AI & Machine Learning**: Training models with various AI frameworks.\n- **Data Engineering**: Developing pipelines for AI model training and data processing.\n- **Data Analysis**: Conducting analyses to guide feature decisions and optimize AI models.\n- **Automation**: Creating tools to streamline daily workflows.\n- **Prototyping**: Rapidly developing research prototypes.\n\n## Java\n\nI have two years of experience as a backend developer using Java, where I:\n- **Web Development**: Built backend services using the Spring Boot framework.\n- **Data Processing**: Developed tools for offline data processing.\n- **Big Data**: Leveraged Spark for large-scale data operations.\n\n## C++\n\nMost of my C++ work has been research-focused, where I:\n- **Algorithm Development**: Implemented data structures and algorithms for mesh research.\n- **Optimization**: Enhanced AI model training algorithms for better performance.\n\n## Linux & shell\n\nMy Linux knowledge enables efficient development of backend services, AI model training, and intensive data processing tasks. I create data pipelines and automation scripts using shell commands to optimize workflows.\n\n## Html, CSS & JS\n\nWhile I haven’t applied front-end skills in industry projects, I use HTML, CSS, and JavaScript in personal projects, including this site. These skills allow me to create useful tools and explore web development creatively.\n\n## Human language\n\n### Chinese\n\nI’m a native Chinese speaker and an essayist — some of my work is published [here](https://dimen61.github.io). I feel confident in my Chinese writing abilities.\n\n### English\n\nI am fluent in English, both written and spoken. During my time at Microsoft, I collaborated effectively with colleagues across the U.S., France, and India, using English for all communications."
     },
     "work": {
       "type": "dir",
-      "contents": {}
+      "contents": {
+        "Microsoft.md": {
+          "type": "file",
+          "content": "# Microsoft Work Experience\n\nI have two work experiences in Microsoft. The first one is summer internship and the second one is full time job.\n\n## Summer internship (2017)\n\n\n\n## Fulltime job (2020 ~ 2022)\n\n"
+        },
+        "Xiaomi.md": {
+          "type": "file",
+          "content": "# Xiaomi Work Experience\n\n## Fulltime job (2018 ~ 2020)"
+        }
+      }
     }
   }
 }
