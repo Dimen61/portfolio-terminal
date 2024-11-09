@@ -1,5 +1,5 @@
 document.addEventListener('MatrixRainLoaded', () => {
-    const terimial = document.querySelector('#terminal');
+    const terminal = document.querySelector('#terminal');
     const commandInput = document.querySelector("#command-input");
 
     resetCaret();
@@ -16,7 +16,7 @@ document.addEventListener('MatrixRainLoaded', () => {
     });
 
     // Focus the command input
-    terimial.addEventListener("click", () => {
+    terminal.addEventListener("click", () => {
         commandInput.focus();
     });
 });
@@ -57,5 +57,3 @@ function getCaretPostionInPixel() {
 
     return caretPosition * charWidth;
 }
-
-console.log('Main css is ready...');
