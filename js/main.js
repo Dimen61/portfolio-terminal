@@ -19,7 +19,47 @@ document.addEventListener('MatrixRainLoaded', () => {
     terminal.addEventListener("click", () => {
         commandInput.focus();
     });
+
+    // Input `cat readme.md` to give user a hint
+    hintAnimation();
 });
+
+function hintAnimation() {
+    const hintCommand = 'cat readme.md';
+    const enterKeyEvent = new KeyboardEvent('keypress', {
+        key: 'Enter',
+        keyCode: 13,
+        bubbles: true,
+    });
+
+    // Hint for the guests of web page
+    delayedCommandLineInput(hintCommand, 80).then(() => {
+        commandInput.dispatchEvent(enterKeyEvent);
+    }).catch((error) => {
+        console.error(error);
+    }).finally(() => {
+        console.log('Hint for the guests of web page');
+    });
+}
+
+function delayedCommandLineInput(targetCommandLineText, delayTimeinMilliseconds) {
+    return new Promise((resolve) => {
+        commandInput.value = '';
+
+        // animate the response
+        const intervalId = setInterval(() => {
+            const currentText = commandInput.value;
+            const nextChar = targetCommandLineText[currentText.length];
+            if (nextChar) {
+                commandInput.value += nextChar;
+                commandInput.dispatchEvent(new Event('keyup'));
+            } else {
+                clearInterval(intervalId);
+                resolve();
+            }
+        }, delayTimeinMilliseconds);
+    });
+}
 
 function resetCaret() {
     const caret = document.querySelector("#caret");

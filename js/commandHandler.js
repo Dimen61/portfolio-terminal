@@ -43,8 +43,7 @@ commandInput.addEventListener("keypress", function (e) {
     resetCaret();
 
     // Scroll to the bottom
-    document.getElementById("terminal").scrollTop =
-      document.getElementById("terminal").scrollHeight;
+    document.getElementById("terminal").scrollTop = document.getElementById("terminal").scrollHeight;
   } 
 });
 
@@ -154,7 +153,7 @@ function handleCommand(command) {
 }
 
 function newline(content) {
-  return `<div>${content}</div>`;
+  return `<div class="hint">${content}</div>`;
 }
 
 function tabCompletion(inputText) {
