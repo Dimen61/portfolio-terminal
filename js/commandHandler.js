@@ -25,6 +25,7 @@ let currentDir = "/";
 const commandInput = document.getElementById("command-input");
 const outputMsg = document.getElementById("output");
 
+let forHintAnimation = true;
 // This event listener handles the "Enter" key press on the command input
 commandInput.addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
@@ -43,8 +44,15 @@ commandInput.addEventListener("keypress", function (e) {
     resetCaret();
 
     // Scroll to the bottom
-    document.getElementById("terminal").scrollTop = document.getElementById("terminal").scrollHeight;
-  } 
+    let delayTime = 0;
+    if (forHintAnimation) {
+      delayTime = 2500;  
+      forHintAnimation = false;
+    }
+    setTimeout(() => {
+      document.getElementById("terminal").scrollTop = document.getElementById("terminal").scrollHeight;
+    }, delayTime);
+  }
 });
 
 // This event listener handles the "Tab" key press on the command input
@@ -239,17 +247,6 @@ function cat_cmd(fileName) {
   if (fileSystemObj && fileSystemObj.type === "file") {
       return fileSystemObj.content;
   }
-
-//   const fileSystemObj = getFileSystemObj(currentDir);
-//   if (fileSystemObj && fileSystemObj.type === "dir") {
-//     const file = fileSystemObj.contents[fileName];
-//     if (file && file.type === "file") {
-//       return file.content;
-//     } else {
-//       return false;
-//     }
-//   }
-
 
   return false;
 }
