@@ -22,16 +22,19 @@ let currentDir = "/";
 //////////////////////////////////////////////////////////////////////////////
 // Command input event handlers
 //////////////////////////////////////////////////////////////////////////////
-const commandInput = document.getElementById("command-input");
-const outputMsg = document.getElementById("output");
+const terminal = document.querySelector("#terminal");
+const commandInput = document.querySelector("#command-input");
+const outputMsg = document.querySelector("#output");
 
 let forHintAnimation = true;
+
 // This event listener handles the "Enter" key press on the command input
 commandInput.addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
-    console.log(commandInput.value);
     const command = commandInput.value.trim();
     console.log(`command: ${command}`);
+    const currentCommandlineHeight = getCommandLineRelativeYPosition();
+    console.log(`currentCommandlineHeight: ${currentCommandlineHeight}px`);
 
     // Output the command
     outputMsg.innerHTML += `<div><span class="prompt">dimen61@portfolio:${currentDir}$</span> ${command}</div>`;
@@ -43,15 +46,31 @@ commandInput.addEventListener("keypress", function (e) {
     handleCommand(command);
     resetCaret();
 
-    // Scroll to the bottom
-    let delayTime = 0;
-    if (forHintAnimation) {
-      delayTime = 2500;  
-      forHintAnimation = false;
-    }
-    setTimeout(() => {
-      document.getElementById("terminal").scrollTop = document.getElementById("terminal").scrollHeight;
-    }, delayTime);
+    const style = window.getComputedStyle(terminal);
+    const terminalHeight = parseFloat(style.height);
+
+    console.log(`terminal.scrollHeight: ${terminal.scrollHeight}px`);
+    console.log(`currentScrollHeight: ${currentScrollHeight}px`);
+    console.log(`terminalHeight: ${terminalHeight}px`);
+    console.log('offsetTop: ' + document.querySelector('#input-line').offsetTop);
+    console.log(`terminal.scrollTop: ${terminal.scrollTop}px`);
+    const newCommandlineHeight = getCommandLineRelativeYPosition();
+    console.log(`currentCommandlineHeight: ${currentCommandlineHeight}px`);
+
+    // Turn the page
+    const DELAY_TIME_IN_MS = 2500;  
+    const outputHeight = newCommandlineHeight - currentCommandlineHeight;
+    if (outputHeight >= terminalHeight) {
+      // Scroll the command line to the top 
+      terminal.scrollTop += currentCommandlineHeight;
+      setTimeout(() => {
+        // Scroll to the bottom
+        terminal.scrollTop = terminal.scrollHeight;
+      }, DELAY_TIME_IN_MS);
+    } else {
+      // Scroll to the bottom
+      terminal.scrollTop = terminal.scrollHeight;
+    } 
   }
 });
 
@@ -79,6 +98,12 @@ commandInput.addEventListener("keydown", (e) => {
 });
 
 console.log('Command handler loaded...');
+
+function getCommandLineRelativeYPosition() {
+  const style = window.getComputedStyle(terminal);
+  const paddingTop = parseFloat(style.paddingTop);
+  return commandInput.offsetTop - terminal.scrollTop - paddingTop;
+}
 
 function getSupportedCommands() {
   return ["help", "ls", "pwd", "clear", "cd", "cat"];  
