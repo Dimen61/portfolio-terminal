@@ -34,7 +34,6 @@ commandInput.addEventListener("keypress", function (e) {
     const command = commandInput.value.trim();
     console.log(`command: ${command}`);
     const currentCommandlineHeight = getCommandLineRelativeYPosition();
-    console.log(`currentCommandlineHeight: ${currentCommandlineHeight}px`);
 
     // Output the command
     outputMsg.innerHTML += `<div><span class="prompt">dimen61@portfolio:${currentDir}$</span> ${command}</div>`;
@@ -46,20 +45,13 @@ commandInput.addEventListener("keypress", function (e) {
     handleCommand(command);
     resetCaret();
 
+    // Turn the page
+    const newCommandlineHeight = getCommandLineRelativeYPosition();
+    const DELAY_TIME_IN_MS = 2500;  
+    const outputHeight = newCommandlineHeight - currentCommandlineHeight;
     const style = window.getComputedStyle(terminal);
     const terminalHeight = parseFloat(style.height);
 
-    console.log(`terminal.scrollHeight: ${terminal.scrollHeight}px`);
-    console.log(`currentScrollHeight: ${currentScrollHeight}px`);
-    console.log(`terminalHeight: ${terminalHeight}px`);
-    console.log('offsetTop: ' + document.querySelector('#input-line').offsetTop);
-    console.log(`terminal.scrollTop: ${terminal.scrollTop}px`);
-    const newCommandlineHeight = getCommandLineRelativeYPosition();
-    console.log(`currentCommandlineHeight: ${currentCommandlineHeight}px`);
-
-    // Turn the page
-    const DELAY_TIME_IN_MS = 2500;  
-    const outputHeight = newCommandlineHeight - currentCommandlineHeight;
     if (outputHeight >= terminalHeight) {
       // Scroll the command line to the top 
       terminal.scrollTop += currentCommandlineHeight;
