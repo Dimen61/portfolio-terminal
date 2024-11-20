@@ -14,6 +14,10 @@
         }
       }
     },
+    "luck.md": {
+      "type": "file",
+      "content": ""
+    },
     "project": {
       "type": "dir",
       "contents": {}
@@ -31,11 +35,11 @@
       "contents": {
         "Microsoft.md": {
           "type": "file",
-          "content": "# Microsoft Work Experience\n\nI have two work experiences in Microsoft. The first one is summer internship and the second one is full time job.\n\n## Summer internship (2017)\n\n\n\n## Fulltime job (2020 ~ 2022)\n\n"
+          "content": "# Microsoft Work Experience\n\nI have two work experiences in Microsoft. The first one is summer internship and the second one is full time job.\n\n## Summer internship (2017)\n\nDuring my internship with the Microsoft Bing Search team, I focused on leveraging AI technologies, such as word embeddings and the Convolutional Deep Structured Semantic Model (CDSSM), to explore features aimed at enhancing Bing’s search result quality. Initially, my offline experiments showed limited improvement, but through two months of persistence and iteration, I achieved a significant gain that led to my receiving a full-time offer.\n\n## Fulltime job (2020 ~ 2022)\n\nAfter 2.5 years at Xiaomi, I returned to Microsoft as a backend engineer, contributing to improving the user experience on Bing’s shopping pages. My responsibilities extended beyond backend development to include data analysis, where I evaluated experimental results to guide iterative improvements in user experience.\n\nIn my first year, I delivered above-average performance, successfully balancing technical development and data-driven decision-making. However, my second year was more challenging. A key project I worked on did not meet expectations, which impacted my overall performance. Despite this setback, the experience provided valuable lessons in project management and resilience that continue to shape my approach to work.\n\n"
         },
         "Xiaomi.md": {
           "type": "file",
-          "content": "# Xiaomi Work Experience\n\n## Fulltime job (2018 ~ 2020)"
+          "content": "# Xiaomi Work Experience\n\n## Fulltime job (2018 ~ 2020)\n\nAfter graduating from Zhejiang University with a master’s degree, I had two compelling offers: one from Microsoft and the other from Xiaomi. Drawn by Xiaomi's rapid growth and the exciting opportunities offered by the role, I chose to join Xiaomi and moved to Beijing—a city in northern China I had never lived in or visited before.\n\nMy first challenge wasn’t professional but personal. Having grown up in southern China, I struggled to adapt to Beijing’s climate and living conditions. My initial housing situation was far from ideal, with noise issues that severely disrupted my sleep. The first six months were a difficult period, as sleep deprivation impacted my ability to perform at my best.\n\nProfessionally, I started as a backend engineer, where I contributed to building Xiaomi’s machine learning platform for ad recommendations. My work include like optimizing model training programs in C++, developing the backend of a feature platform using Java and Spring Boot and creating tools to support data scientists.\n\nAfter my first year, I earned a promotion and transitioned into a data scientist role. In this capacity, I applied machine learning algorithms to predict user click-through rates (CTR) for advertisements, aiming to increase revenue per mille (RPM) while maintaining a positive user experience. Though I faced initial challenges in achieving noticeable results, persistence paid off. After months of experimentation, I successfully improved CTR by 6.5%, significantly boosting the platform's ad revenue.\n\n"
         }
       }
     }
