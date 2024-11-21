@@ -178,7 +178,25 @@ function handleCommand(command) {
 }
 
 function newline(content) {
-  return `<div class="hint">${content}</div>`;
+  return `<div">${highlightMarkdown(content)}</div>`;
+}
+
+function highlightMarkdown(markdownString) {
+  const markdownSymbols = [
+    { pattern: /(\*\*[^*]+\*\*)/g, replacement: "<strong>$1</strong>" },
+    { pattern: /(`[^`]+`)/g, replacement: "<code>$1</code>" },
+    { pattern: /^(# .+)$/gm, replacement: "<h1>$1</h1>" },  
+    { pattern: /^(## .+)$/gm, replacement: "<h2>$1</h2>" }, 
+    { pattern: /^(### .+)$/gm, replacement: "<h3>$1</h3>" },
+  ];
+
+  let outputString = markdownString;
+
+  markdownSymbols.forEach(symbol => {
+    outputString = outputString.replace(symbol.pattern, symbol.replacement);
+  });
+
+  return outputString;
 }
 
 function tabCompletion(inputText) {
