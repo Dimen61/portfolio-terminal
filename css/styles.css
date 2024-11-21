@@ -75,3 +75,17 @@ canvas {
         opacity: 0;
     } 
 }
+
+/* For markdown */
+strong {
+    color:rgb(241, 84, 162);
+}
+
+h1, h2, h3 {
+    color: #b4f6b4;
+}
+
+code {
+    border: 1px dashed #dce2dc;    
+    color: #b4f6b4;
+}
